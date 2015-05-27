@@ -11,7 +11,7 @@ module Catchoom
       @url = opts[:url]
       @content = opts[:content]
       @custom = opts[:custom]
-      @trackable = opts[:trackable] != nil ? opts[:trackable] : true
+      @trackable = opts[:trackable] || false
       @uuid = opts[:uuid]
       @resource_uri = opts[:resource_uri]
     end

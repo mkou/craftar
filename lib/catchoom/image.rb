@@ -11,17 +11,7 @@ module Catchoom
     end
 
     def save
-      response = call(:post, file: prepare_file_from_url(@file_url), item: item)
-      set_attributes(response)
-      self
-    end
-
-    def update(opts)
-      options = {
-        item: opts[:item],
-        file: opts[:file]
-      }.select { |_, value| !value.nil? }
-      response = call(:put, options)
+      response = call(:post, file: prepare_file_from_url(@file), item: item)
       set_attributes(response)
       self
     end

@@ -17,7 +17,7 @@ module Catchoom
     # Fetching a page To navigate through pages, use the ‘limit‘ and ‘offset‘ parameters.
     # The objects of the current page are in the 'objects' fields
     def self.list(opts = {})
-      parse_response(get("/#{catchoom_name}/", basic_options.merge(opts)))
+      response = parse_response(get("/#{catchoom_name}/", basic_options.merge(opts)))
       raise (response ['error']['message']) if response['error']
       objects = []
       response['objects'].each do |object|
@@ -84,6 +84,7 @@ module Catchoom
     end
 
     def prepare_file_from_url(url)
+      require 'open-uri'
       extname = File.extname(url)
       basename = File.basename(url, extname)
 

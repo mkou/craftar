@@ -1,6 +1,6 @@
 module Catchoom
   class Media < Catchoom::Base
-    attr_reader :uuid, :file, :resource_uri
+    attr_reader :uuid, :file, :resource_uri, :name, :mimetype
 
     def self.catchoom_name
       'media'
@@ -10,7 +10,8 @@ module Catchoom
       @uuid = opts[:uuid]
       @file = opts[:file]
       @resource_uri = opts[:resource_uri]
-
+      @name = opts[:name]
+      @mimetype = opts[:mimetype]
     end
 
     def save
@@ -18,6 +19,8 @@ module Catchoom
       @uuid = response['uuid']
       @file = response['file']
       @resource_uri = response['resource_uri']
+      @name = response['name']
+      @mimetype = response['mimetype']
       self
     end
   end
