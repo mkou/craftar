@@ -66,8 +66,6 @@ This is needed to authenticate your requests to the Management API.
     Catchoom::Collection.list name__contains: 'nam', offset: 10, limit: 20
     
 
-  
-
 ### Items
 
 ###### Create a new item.
@@ -98,4 +96,58 @@ Possible parameters: name, collection, url, content, custom, trackable
   - collection__name
   - collection__name__contains
 
+
+
+### Images
+
+###### Create a new image.
+    
+    file = 'http://blabla/image.jpg'
+    image = Catchoom::Image.create(item: item.resorce_uri, file: file)
+
+Possible parameters: name, collection, url, content, custom, trackable
+
+###### Delete an image
+    image.destroy
+
+###### Get an image
+    uuid = '8a95c8ab98e9c464' #The uuid of the image you want to find
+    Catchoom::Image.find(uid)
+You will receive uuid, item, file, resource_uri, name, status, thumb_120, thumb_60, tracking_data_status
+
+###### Get the image list
+    Catchoom::Image.list
+    Catchoom::Image.list name: 'name', limit: 10
+    Catchoom::Image.list name_contains: 'nam', offset: 10, limit: 20
+
+  You can also filter by 
+  - item__uuid: filter by item UUID.
+  - item__name: filter by item by this exact match.
+  - item__name__contains: filter by item by case-sensitive containment.
+  - item__collection__uuid: filter by item’s collection UUID.
+  - item__collection__name: filter by item’s collection name, using this exact match.
+  - item__collection__name__contains: filter by item’s collection name, using case-sensitive containment.
+  - status: filter by image status (ER or OK).
+  
+
+
+### Media
+
+###### Create a new media.
+    
+    file = 'http://test/test.jpg' # use your own media url
+    media = Catchoom::Media.create(name: name, file: file)
+
+###### Get an media
+    uuid = '8a95c8ab98e9c464' #The uuid of the media you want to find
+    Catchoom::Media.find(uid)
+
+###### Get the media list
+    Catchoom::Media.list
+    Catchoom::Media.list name: 'name', limit: 10
+    Catchoom::Media.list name_contains: 'nam', offset: 10, limit: 20
+
+  You can also filter by 
+  - mimetype
+  - mimetype__contains
 
