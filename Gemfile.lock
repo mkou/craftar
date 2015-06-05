@@ -2,12 +2,11 @@ PATH
   remote: .
   specs:
     craftar (0.0.1)
-      httmultiparty
+      httmultiparty (~> 0.3, >= 0.3.16)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    coderay (1.1.0)
     diff-lcs (1.2.5)
     httmultiparty (0.3.16)
       httparty (>= 0.7.3)
@@ -17,14 +16,9 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     json (1.8.2)
-    method_source (0.8.2)
     mimemagic (0.3.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    pry (0.10.1)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
@@ -38,12 +32,10 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
-    slop (3.6.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   craftar!
-  pry
-  rspec
+  rspec (~> 3.2, >= 3.2.0)
