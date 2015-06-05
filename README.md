@@ -129,7 +129,21 @@ You will receive uuid, item, file, resource_uri, name, status, thumb_120, thumb_
   - item__collection__name__contains: filter by item’s collection name, using case-sensitive containment.
   - status: filter by image status (ER or OK).
 
+### Token
 
+###### Create a new token
+    token = Craftar::Token.create(collection: collection.collection_uri)
+
+###### Delete a token
+    token.destroy
+
+###### Get token list
+    Craftar::Token.list
+    Craftar::Token.list offset: 10, limit: 20
+You can also filter by:
+- collection__uuid: filter by collection UUID.
+- collection__name: filter by collection name, using this exact match.
+- collection__name__contains: filter by collection name, using case-sensitive containment.
 
 ### Media
 
@@ -138,7 +152,7 @@ You will receive uuid, item, file, resource_uri, name, status, thumb_120, thumb_
     file = 'http://test/test.jpg' # use your own media url
     media = Craftar::Media.create(name: name, file: file)
 
-###### Get an media
+###### Get a media
     uuid = '8a95c8ab98e9c464' #The uuid of the media you want to find
     Craftar::Media.find(uid)
 
