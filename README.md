@@ -58,7 +58,7 @@ This is needed to authenticate your requests to the Management API.
 
 ###### Get a collection
     uuid = '' #The uuid of the collection you want to find
-    Craftar::Collection.find(uid)
+    Craftar::Collection.find(uuid)
 
 ###### Get the collection list
     Craftar::Collection.list
@@ -84,7 +84,7 @@ Possible parameters: name, collection, url, content, custom, trackable
 
 ###### Get an item
     uuid = '8a95c8ab98e9c464' #The uuid of the item you want to find
-    Craftar::Item.find(uid)
+    Craftar::Item.find(uuid)
 
 ###### Get the item list
     Craftar::Item.list
@@ -112,7 +112,7 @@ Possible parameters: name, collection, url, content, custom, trackable
 
 ###### Get an image
     uuid = '8a95c8ab98e9c464' #The uuid of the image you want to find
-    Craftar::Image.find(uid)
+    Craftar::Image.find(uuid)
 You will receive uuid, item, file, resource_uri, name, status, thumb_120, thumb_60, tracking_data_status
 
 ###### Get the image list
@@ -154,7 +154,7 @@ You can also filter by:
 
 ###### Get a media
     uuid = '8a95c8ab98e9c464' #The uuid of the media you want to find
-    Craftar::Media.find(uid)
+    Craftar::Media.find(uuid)
 
 ###### Get the media list
     Craftar::Media.list
