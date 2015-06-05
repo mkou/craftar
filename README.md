@@ -151,3 +151,12 @@ You will receive uuid, item, file, resource_uri, name, status, thumb_120, thumb_
   - mimetype
   - mimetype__contains
 
+## Contributing
+
+Please, if you use it, report back any bugs/problems.
+- Fork it
+- Create your feature branch (git checkout -b my-new-feature)
+- Commit your changes (git commit -am 'Add some feature')
+- Don't forget to test your feature
+- Push to the branch (git push origin my-new-feature)
+- Create new Pull Request
