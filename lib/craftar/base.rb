@@ -1,5 +1,5 @@
-# The main Catchoom class
-module Catchoom
+# The main Craftar class
+module Craftar
   class Base
     include HTTMultiParty
     base_uri 'https://my.craftar.net/api/v0'
@@ -17,7 +17,7 @@ module Catchoom
     # Fetching a page To navigate through pages, use the ‘limit‘ and ‘offset‘ parameters.
     # The objects of the current page are in the 'objects' fields
     def self.list(opts = {})
-      response = parse_response(get("/#{catchoom_name}/", basic_options.merge(opts)))
+      response = parse_response(get("/#{craftar_name}/", basic_options.merge(opts)))
       raise (response ['error']['message']) if response['error']
       objects = []
       response['objects'].each do |object|
@@ -29,7 +29,7 @@ module Catchoom
 
     # Find an object thanks to its uuid
     def self.find(uuid)
-      response = parse_response(get("/#{catchoom_name}/#{uuid}", basic_options))
+      response = parse_response(get("/#{craftar_name}/#{uuid}", basic_options))
       return if response == {}
       self.new(response.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo})
     end
@@ -44,20 +44,20 @@ module Catchoom
 
     # destroy an object
     def destroy
-      self.class.delete("/#{self.class.catchoom_name}/#{uuid}/", self.class.basic_options)
+      self.class.delete("/#{self.class.craftar_name}/#{uuid}/", self.class.basic_options)
     end
 
     private
 
     # the basic query option
     def self.basic_options
-      { query: { api_key: Catchoom.api_key } }
+      { query: { api_key: Craftar.api_key } }
     end
 
     def call(method_name, opts)
       response = self.class.send(method_name,
-                      "/#{self.class.catchoom_name}/",
-                      query: { api_key: Catchoom.api_key }.merge!(opts)
+                      "/#{self.class.craftar_name}/",
+                      query: { api_key: Craftar.api_key }.merge!(opts)
       )
       raise (response ['error']['message']) if response['error']
       response
@@ -65,9 +65,9 @@ module Catchoom
 
     def json_call(method_name, opts)
       uid = opts.delete(:uuid)
-      path = "/#{self.class.catchoom_name}/"
+      path = "/#{self.class.craftar_name}/"
       path += "#{uid}/" if uid
-      path += "?api_key=#{Catchoom.api_key}"
+      path += "?api_key=#{Craftar.api_key}"
       response = self.class.parse_response( HTTParty.send(
         method_name,
         self.class.base_uri + path,

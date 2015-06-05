@@ -1,7 +1,7 @@
-module Catchoom
-  class Item < Catchoom::Base
+module Craftar
+  class Item < Craftar::Base
     attr_reader :uuid, :name, :collection, :url, :content, :custom, :trackable, :resource_uri
-    def self.catchoom_name
+    def self.craftar_name
       'item'
     end
 
@@ -11,7 +11,7 @@ module Catchoom
       @url = opts[:url]
       @content = opts[:content]
       @custom = opts[:custom]
-      @trackable = opts[:trackable] || false
+      @trackable = opts[:trackable]
       @uuid = opts[:uuid]
       @resource_uri = opts[:resource_uri]
     end

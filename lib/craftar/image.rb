@@ -1,8 +1,8 @@
-module Catchoom
-  class Image < Catchoom::Base
+module Craftar
+  class Image < Craftar::Base
     attr_reader :uuid, :item, :resource_uri, :file, :name, :status, :thumb_120, :thumb_60, :tracking_data_status
 
-    def self.catchoom_name
+    def self.craftar_name
       'image'
     end
 

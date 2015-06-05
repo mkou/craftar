@@ -1,3 +1,3 @@
-module Catchoom
+module Craftar
   VERSION = '0.0.1'
 end

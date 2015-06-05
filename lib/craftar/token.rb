@@ -1,7 +1,7 @@
-module Catchoom
-  class Token < Catchoom::Base
+module Craftar
+  class Token < Craftar::Base
     attr_reader :token, :resource_uri, :collection
-    def self.catchoom_name
+    def self.craftar_name
       'token'
     end
 

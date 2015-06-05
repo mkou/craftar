@@ -1,7 +1,7 @@
-module Catchoom
-  class Collection < Catchoom::Base
+module Craftar
+  class Collection < Craftar::Base
     attr_reader :uuid, :name, :resource_uri
-    def self.catchoom_name
+    def self.craftar_name
       'collection'
     end
 

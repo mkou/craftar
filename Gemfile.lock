@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    catchoom (0.0.1)
+    craftar (0.0.1)
       httmultiparty
 
 GEM
@@ -44,6 +44,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  catchoom!
+  craftar!
   pry
   rspec

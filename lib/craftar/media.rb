@@ -1,8 +1,8 @@
-module Catchoom
-  class Media < Catchoom::Base
+module Craftar
+  class Media < Craftar::Base
     attr_reader :uuid, :file, :resource_uri, :name, :mimetype
 
-    def self.catchoom_name
+    def self.craftar_name
       'media'
     end
 
