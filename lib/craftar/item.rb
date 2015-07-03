@@ -23,7 +23,8 @@ module Craftar
          name: @name,
          collection: @collection,
          trackable: @trackable,
-         content: @content
+         content: @content,
+         custom: @custom
         }
       )
       @uuid = response['uuid']
