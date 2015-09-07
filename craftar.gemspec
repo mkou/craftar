@@ -15,10 +15,15 @@ Gem::Specification.new do |spec|
     "lib/craftar/image.rb",
     "lib/craftar/item.rb",
     "lib/craftar/media.rb",
-    "lib/craftar/token.rb"
+    "lib/craftar/token.rb",
+    "lib/craftar/collection_bundle.rb",
+    "lib/craftar/app.rb",
+    "lib/craftar/sdk_version.rb"
   ]
   spec.homepage    = 'https://github.com/mkou/craftar'
   spec.license     = 'MIT'
   spec.add_development_dependency "rspec",  '~> 3.2', '>= 3.2.0'
+  spec.add_development_dependency "pry"
+
   spec.add_dependency "httmultiparty", '~> 0.3', '>= 0.3.16'
 end

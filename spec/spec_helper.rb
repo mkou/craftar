@@ -3,6 +3,7 @@ Bundler.setup
 
 require 'httmultiparty'
 require 'craftar'
+require 'pry'
 
 RSpec.configure do |config|
   config.order = :random
