@@ -165,6 +165,49 @@ You can also filter by:
   - mimetype
   - mimetype__contains
 
+### Application ID
+
+###### Create a new app 
+
+    media = Craftar::App.create(name: name, collection: collection.resource_uri)
+
+###### Get an app
+    uuid = '8a95c8ab98e9c464' #The uuid of the app you want to find
+    Craftar::App.find(uuid)
+
+###### Get the app list
+    Craftar::App.list
+    Craftar::App.list name: 'name', limit: 10
+    Craftar::App.list name_contains: 'nam', offset: 10, limit: 20
+
+### SDK versions
+
+###### Get a version
+    uuid = '8a95c8ab98e9c464' #The uuid of the version you want to find
+    Craftar::SdkVersion.find(uuid)
+
+###### Get the app list
+    Craftar::SdkVersion.list
+    Craftar::SdkVersion.list, offset: 10, limit: 20
+
+### Collection Bundle
+
+###### Create a new collection bundle.
+
+    collection_bundle = Craftar::CollectionBundle.create(collection: collection.resource_uri, app: app.resource_uri, version: version.resource_uri)
+
+
+###### Delete an collection bundle
+    collection_bundle.destroy
+
+###### Get an collection bundle
+    uuid = '8a95c8ab98e9c464' #The uuid of the collection bundle you want to find
+    Craftar::Item.find(uuid)
+
+###### Get the collection bundle list
+    Craftar::CollectionBundle.list
+    Craftar::CollectionBundle.list, offset: 10, limit: 20
+
 ## Contributing
 
 Please, if you use it, report back any bugs/problems.
