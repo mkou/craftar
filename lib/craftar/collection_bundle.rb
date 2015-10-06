@@ -11,6 +11,8 @@ module Craftar
       @app = opts[:app]
       @collection = opts[:collection]
       @version = opts[:version]
+      @file = opts[:file]
+      @status = opts[:status]
     end
 
     def save

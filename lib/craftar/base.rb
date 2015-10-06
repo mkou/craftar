@@ -59,7 +59,11 @@ module Craftar
                       "/#{self.class.craftar_name}/",
                       query: { api_key: Craftar.api_key }.merge!(opts)
       )
-      raise (response ['error']['message']) if response['error']
+      if response['error']
+        error_message = self.class.craftar_name + ': ' + response['error']['message']
+        error_message += response['error']['details'] if response['error']['details']
+        raise error_message
+      end
       response
     end
 
@@ -74,7 +78,12 @@ module Craftar
         body: opts.to_json,
         headers: { 'Content-Type' => 'application/json' }
       ))
-      raise response ['error']['message'] if response['error']
+      if response['error']
+
+        error_message = self.class.craftar_name + ': ' + response['error']['message']
+        error_message += response['error']['details'] if response['error']['details']
+        raise error_message
+      end
       response
     end
 

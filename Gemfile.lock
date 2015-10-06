@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    craftar (0.0.2)
+    craftar (0.0.3)
       httmultiparty (~> 0.3, >= 0.3.16)
 
 GEM
