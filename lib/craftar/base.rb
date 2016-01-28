@@ -17,7 +17,7 @@ module Craftar
     # Fetching a page To navigate through pages, use the ‘limit‘ and ‘offset‘ parameters.
     # The objects of the current page are in the 'objects' fields
     def self.list(opts = {})
-      response = parse_response(get("/#{craftar_name}/", basic_options.merge(opts)))
+      response = parse_response(get("/#{craftar_name}/", basic_options(opts)))
       raise (response ['error']['message']) if response['error']
       objects = []
       response['objects'].each do |object|
@@ -50,8 +50,8 @@ module Craftar
     private
 
     # the basic query option
-    def self.basic_options
-      { query: { api_key: Craftar.api_key } }
+    def self.basic_options(opts = {})
+      { query: { api_key: Craftar.api_key }.merge(opts) }
     end
 
     def call(method_name, opts)
