@@ -71,13 +71,14 @@ This is needed to authenticate your requests to the Management API.
 ###### Create a new item.
 
     name = 'test' # use your own item name
-    item = Craftar::Item.create(collection: collection.resorce_uri, name: name, trackable: false)
+    custom = { key1: value1, key2: value2}.to_json #custom parameter must be a string
+    item = Craftar::Item.create(collection: collection.resorce_uri, name: name, trackable: false, custom: custom)
 
 ###### Update an item
 
     item.update(trackable: true)
 
-Possible parameters: name, collection, url, content, custom, trackable
+Possible parameters: name, collection, url, content, custom, trackable, tags
 
 ###### Delete an item
     item.destroy
@@ -207,6 +208,31 @@ You can also filter by:
 ###### Get the collection bundle list
     Craftar::CollectionBundle.list
     Craftar::CollectionBundle.list, offset: 10, limit: 20
+    
+### Tags
+
+###### Create a new tag.
+
+    name = 'my_tag' # your tag name
+    tag = Craftar::Tag.create(collection: collection.resorce_uri, name: name)
+
+###### Update an tag
+
+    tag.update(name: 'my_new_tag')
+
+Possible parameters: name, collection
+
+###### Delete a tag
+    tag.destroy
+
+###### Get a tag
+    uuid = '8a95c8ab98e9c464' #The uuid of the tag you want to find
+    Craftar::Tag.find(uuid)
+
+###### Get the item list
+    Craftar::Tag.list
+    Craftar::Tag.list name: 'name', limit: 10
+    Craftar::Tag.list name_contains: 'nam', offset: 10, limit: 20
 
 ## Contributing
 
