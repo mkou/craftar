@@ -8,6 +8,8 @@ require 'craftar/image'
 require 'craftar/token'
 require 'craftar/sdk_version'
 require 'craftar/media'
+require 'craftar/tag'
+
 module Craftar
   class << self; attr_accessor :api_key; end
 end

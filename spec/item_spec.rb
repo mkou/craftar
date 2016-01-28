@@ -48,6 +48,7 @@ describe Craftar::Item do
     it 'should delete the item' do
       item = Craftar::Item.create(name: SecureRandom.hex(8), collection: @collection.resource_uri)
       uuid = item.uuid
+      item.destroy
       expect(Craftar::Item.find(uuid)).to be_nil
     end
   end

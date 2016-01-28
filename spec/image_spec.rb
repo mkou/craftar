@@ -3,7 +3,7 @@ describe Craftar::Image do
     Craftar.api_key = api_key
     @collection = Craftar::Collection.create(name: SecureRandom.hex(8))
     @item = Craftar::Item.create(name: SecureRandom.hex(8), collection: @collection.resource_uri)
-    @image_url = 'http://craftar.com/wp-content/files/2014/10/augmented-reality-creator-img.png'
+    @image_url = 'http://catchoom.com/wp-content/files/2014/10/image-recognition-glass.jpg'
   end
 
   after(:all) do

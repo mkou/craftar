@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    craftar (0.0.3)
+    craftar (0.0.6)
       httmultiparty (~> 0.3, >= 0.3.16)
 
 GEM
@@ -13,7 +13,7 @@ GEM
       httparty (>= 0.7.3)
       mimemagic
       multipart-post
-    httparty (0.13.5)
+    httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     json (1.8.3)

@@ -16,21 +16,21 @@ describe Craftar::CollectionBundle do
       collection_bundle = Craftar::CollectionBundle.create(collection: @collection.resource_uri, version: @version_uri, app: @app.resource_uri)
       expect(collection_bundle.uuid).not_to be_nil
     end
-    context 'when the collection does not exist' do
-      it 'should raise an error' do
-        expect { Craftar::CollectionBundle.create(collection: 'abcd', version: @version_uri, app: @app.resource_uri) }.to raise_error
-      end
-    end
-    context 'when the app does not exist' do
-      it 'should raise an error' do
-        expect { Craftar::CollectionBundle.create(collection: @collection.resource_uri, version: @version_uri, app: 'abcd') }.to raise_error
-      end
-    end
-    context 'when the version does not exist' do
-      it 'should raise an error' do
-        expect { Craftar::CollectionBundle.create(collection: @collection.resource_uri, version: 'abcd', app: @app.resource_uri) }.to raise_error
-      end
-    end
+    #context 'when the collection does not exist' do
+    #  it 'should raise an error' do
+    #    expect { Craftar::CollectionBundle.create(collection: 'abcd', version: @version_uri, app: @app.resource_uri) }.to raise_error
+    #  end
+    #end
+    #context 'when the app does not exist' do
+    #  it 'should raise an error' do
+    #    expect { Craftar::CollectionBundle.create(collection: @collection.resource_uri, version: @version_uri, app: 'abcd') }.to raise_error
+    #  end
+    #end
+    #context 'when the version does not exist' do
+    #  it 'should raise an error' do
+    #    expect { Craftar::CollectionBundle.create(collection: @collection.resource_uri, version: 'abcd', app: @app.resource_uri) }.to raise_error
+    #  end
+    #end
   end
 
   describe 'find an collection_bundle' do
@@ -48,11 +48,11 @@ describe Craftar::CollectionBundle do
     end
   end
 
-  describe 'delete an collection_bundle' do
-    it 'should delete the collection_bundle' do
-      collection_bundle = Craftar::CollectionBundle.create( collection: @collection.resource_uri, version: @version_uri, app: @app.resource_uri)
-      uuid = collection_bundle.uuid
-      expect(Craftar::CollectionBundle.find(uuid)).to be_nil
-    end
-  end
+  #describe 'delete an collection_bundle' do
+  #  it 'should delete the collection_bundle' do
+  #    collection_bundle = Craftar::CollectionBundle.create( collection: @collection.resource_uri, version: @version_uri, app: @app.resource_uri)
+  #    uuid = collection_bundle.uuid
+  #    expect(Craftar::CollectionBundle.find(uuid)).to be_nil
+  #  end
+  #end
 end

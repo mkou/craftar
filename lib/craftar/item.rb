@@ -1,6 +1,6 @@
 module Craftar
   class Item < Craftar::Base
-    attr_reader :uuid, :name, :collection, :url, :content, :custom, :trackable, :resource_uri
+    attr_reader :uuid, :name, :collection, :url, :content, :custom, :trackable, :resource_uri, :tags
     def self.craftar_name
       'item'
     end
@@ -13,6 +13,7 @@ module Craftar
       @custom = opts[:custom]
       @trackable = opts[:trackable]
       @uuid = opts[:uuid]
+      @tags = opts[:tags]
       @resource_uri = opts[:resource_uri]
     end
 
@@ -24,8 +25,9 @@ module Craftar
          collection: @collection,
          trackable: @trackable,
          content: @content,
-         custom: @custom
-        }
+         custom: @custom,
+         tags: @tags
+        }.select { |_, value| !value.nil? }
       )
       @uuid = response['uuid']
       @resource_uri = response['resource_uri']
@@ -39,11 +41,13 @@ module Craftar
         url: opts[:url],
         content: opts[:content],
         custom: opts[:custom],
+        tags: @tags,
         trackable: opts[:trackable]
       }.select { |_, value| !value.nil? }
       response = json_call(:put, { uuid: @uuid }.merge(options))
       @name = response['name']
       @collection = response['collection']
+      @tags = response['tags']
       @url = response['url']
       @content = response['content']
       @custom = response['custom']

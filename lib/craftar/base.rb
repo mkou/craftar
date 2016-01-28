@@ -61,7 +61,7 @@ module Craftar
       )
       if response['error']
         error_message = self.class.craftar_name + ': ' + response['error']['message']
-        error_message += response['error']['details'] if response['error']['details']
+        #error_message += response['error']['details'] if response['error']['details']
         raise error_message
       end
       response
@@ -81,7 +81,7 @@ module Craftar
       if response['error']
 
         error_message = self.class.craftar_name + ': ' + response['error']['message']
-        error_message += response['error']['details'] if response['error']['details']
+        error_message += response['error']['details'].to_s if response['error']['details']
         raise error_message
       end
       response

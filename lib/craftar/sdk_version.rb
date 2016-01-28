@@ -1,6 +1,6 @@
 module Craftar
   class SdkVersion < Craftar::Base
-    attr_reader :resource_uri, :uuid, :version
+    attr_reader :resource_uri, :uuid, :sdk_version, :verbose_name
 
     def self.craftar_name
       'version'
@@ -13,7 +13,8 @@ module Craftar
     def initialize(opts)
       @uuid = opts[:uuid]
       @resource_uri = opts[:resource_uri]
-      @version = opts[:version]
+      @version = opts[:sdk_version]
+      @verbose_name = opts[:verbose_name]
     end
 
 
