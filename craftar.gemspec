@@ -18,7 +18,9 @@ Gem::Specification.new do |spec|
     "lib/craftar/token.rb",
     "lib/craftar/collection_bundle.rb",
     "lib/craftar/app.rb",
-    "lib/craftar/sdk_version.rb"
+    "lib/craftar/sdk_version.rb",
+    "lib/craftar/tag.rb"
+
   ]
   spec.homepage    = 'https://github.com/mkou/craftar'
   spec.license     = 'MIT'
