@@ -43,7 +43,7 @@ module Craftar
       @resource_uri = response['resource_uri']
       @status = response['status']
       @version = response['version']
-      @version = response['tag']
+      @tag = response['tag']
     end
   end
 end
