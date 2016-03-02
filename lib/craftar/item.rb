@@ -41,7 +41,7 @@ module Craftar
         url: opts[:url],
         content: opts[:content],
         custom: opts[:custom],
-        tags: @tags,
+        tags: opts[:tags],
         trackable: opts[:trackable]
       }.select { |_, value| !value.nil? }
       response = json_call(:put, { uuid: @uuid }.merge(options))
