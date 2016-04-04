@@ -133,7 +133,13 @@ You will receive uuid, item, file, resource_uri, name, status, thumb_120, thumb_
 ### Token
 
 ###### Create a new token
-    token = Craftar::Token.create(collection: collection.collection_uri)
+    token = Craftar::Token.create(collection: collection.collection_uri, tags: [tag_uri])
+    
+###### Find the token object
+    token = Craftar::Token.find(token)
+ 
+###### Update the token
+    token.update(tags: [tag_uri])
 
 ###### Delete a token
     token.destroy
