@@ -17,7 +17,7 @@ module Craftar
         :post,
         {
          name: @name,
-         collection: @collection,
+         collection: @collection
         }
       )
       @uuid = response['uuid']
