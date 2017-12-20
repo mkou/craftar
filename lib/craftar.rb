@@ -1,3 +1,5 @@
+require 'httmultiparty'
+
 require 'craftar/base'
 
 require 'craftar/app'
